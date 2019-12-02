@@ -1,16 +1,20 @@
 # required fuel is calculated by dividing by 3, rounding down, and subtracting 2
 
+calculate_fuel <- function(vals){
+  out <- floor(vals / 3) - 2
+  return(sum(out))
+}
+
 # input 12 gives 2
-floor(12 / 3) - 2
+calculate_fuel(12)
 # input 14 gives 2
-floor(14 / 3) - 2
+calculate_fuel(14)
 # input 1969 gives 654
-floor(1969 / 3) - 2
+calculate_fuel(1969)
 # input 100756 gives 33583
-floor(100756 / 3) - 2
+calculate_fuel(100756)
 
-# calculate these values for the following input
-
+# calculate for the following input
 input <- c(102777, 107296, 131207, 116508, 99009, 120098, 83121, 87846, 126604,
            79906, 63668, 143932, 51829, 106383, 121354, 138556, 123426, 111544,
            84395, 147066, 61897, 133724, 75867, 106697, 67782, 86191, 50666,
@@ -24,7 +28,4 @@ input <- c(102777, 107296, 131207, 116508, 99009, 120098, 83121, 87846, 126604,
            114593, 112818, 75964, 126093, 139781, 144801, 88725, 125958, 116869,
            119676)
 
-out <- floor(input / 3) - 2
-
-# the total required amount of fuel is
-sum(out)
+calculate_fuel(input)
